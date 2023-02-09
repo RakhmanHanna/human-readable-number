@@ -71,6 +71,4 @@ module.exports = function toReadable(number) {
     }
     return str;
 };
-
-console.log(module.exports(1));
-console.log(module.exports(997));
+console.log(module.exports(999));
