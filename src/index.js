@@ -34,10 +34,11 @@ module.exports = function toReadable(number) {
         "eighty",
         "ninety",
     ];
+    if (!number) return "zero";
 
-    number = (number || "").toString();
+    number = number.toString();
     number = number.split().join(" ");
-    if (number != parseFloat(number)) return "not a number";
+    // if (number != parseFloat(number)) return "not a number";
     let x = number.indexOf(".");
     if (x == -1) x = number.length;
     if (x > 15) return "too big";
@@ -69,6 +70,7 @@ module.exports = function toReadable(number) {
         str += "point ";
         for (let i = x + 1; i < y; i++) str += dg[n[i]] + " ";
     }
-    return str;
+    return str.trim();
 };
-console.log(module.exports(999));
+console.log(module.exports(1));
+console.log(module.exports(997));
